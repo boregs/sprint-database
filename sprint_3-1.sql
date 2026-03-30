@@ -69,8 +69,8 @@ having quantidade_estoque > 30;
 
 -- Exercicio 10: 
 
-select sum(quantidade_estoque)
+select produtos.name, categoria, sum(quantidade_estoque)
 from produtos
 where data_cadastro < '2024-01-01'
-group by quantidade_estoque
+group by produtos.name, categoria, quantidade_estoque
 having quantidade_estoque < 60;
